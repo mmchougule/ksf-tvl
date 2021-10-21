@@ -9,4 +9,4 @@ jobs:
       - name: Get latest kcc tvl
         run: |
           curl --request GET \
-          --url 'https://ksf-tvl.herokuapp.com/api/tvl/kcc
+          --url 'https://ksf-tvl.herokuapp.com/api/tvl/kcc'
