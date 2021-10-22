@@ -11,7 +11,7 @@ const cache = new NodeCache({ stdTTL: 1200 });
  */
 router.get("/memory", async (req, res) => {
   let tvl;
-  if (cache.has("tvl")) tvl = cache.get("tvl").toFixed(2);
+  if (cache.has("tvl")) tvl = cache.get("tvl").toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   try {
     res.json({
       tvl: tvl,
