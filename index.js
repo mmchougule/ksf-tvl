@@ -3,14 +3,9 @@ const app = express();
 const tvl = require("./api/tvl");
 const oneDay = 1000 * 60 * 60 * 24;
 const sessions = require('express-session');
-// const cache = new NodeCache({ stdTTL: 15 });
+const cors = require("cors");
 
-app.use(sessions({
-    secret: "ksfswaptvld",
-    saveUninitialized:true,
-    cookie: { maxAge: oneDay },
-    resave: false 
-}));
+app.use(cors())
 
 app.use(express.json({ extended: false }));
 
