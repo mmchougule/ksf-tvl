@@ -10,7 +10,7 @@ const cache = new NodeCache({ stdTTL: 1200 });
  * @return tvl | empty.
  */
 router.get("/memory", async (req, res) => {
-  let tvl;
+  let tvl = "";
   if (cache.has("tvl")) tvl = cache.get("tvl").toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   try {
     res.json({
